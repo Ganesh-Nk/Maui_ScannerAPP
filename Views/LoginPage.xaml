@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Maui_Shopping_APP.ViewModels"
+             x:Class="Maui_Shopping_APP.Views.LoginPage"
+             x:DataType="viewmodels:LoginViewModel"
+             BackgroundImageSource="loginlogo3.png"
+             Title="Let's Connect here..!">
+
+    <Grid Padding="40" RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="1" Spacing="15">
+            <Frame BackgroundColor="#EDE6F0" CornerRadius="20" Padding="0" HeightRequest="50">
+                <Entry Placeholder="Cashier ID*" 
+                       PlaceholderColor="Red" 
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       TextColor="Black"
+                       FontSize="14"
+                       FontAttributes="Italic"
+                       Text="{Binding CashierId, Mode=TwoWay}" />
+            </Frame>
+
+            <Frame BackgroundColor="#EDE6F0" CornerRadius="20" Padding="0" HeightRequest="50">
+                <Entry Placeholder="Password*"
+                       IsPassword="True"
+                       PlaceholderColor="Red"
+                       BackgroundColor="Transparent"
+                       HeightRequest="50"
+                       FontSize="14"
+                       TextColor="Black"
+                       Text="{Binding Password, Mode=TwoWay}" />
+            </Frame>
+
+            <Button Text="LOGIN"
+                    BackgroundColor="#5C3B86"
+                    TextColor="White"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    Command="{Binding OnLoginAsyncCommand}" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

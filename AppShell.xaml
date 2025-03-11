@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:Maui_Shopping_APP.Views"
+       x:Class="Maui_Shopping_APP.AppShell"
+       FlyoutBehavior="Disabled">
+
+    <!-- Shell Styles -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="White"/>
+                <Setter Property="Shell.ForegroundColor" Value="Black"/>
+                <Setter Property="Shell.TitleColor" Value="Black"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="Black"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95000000"/>
+            </Style>
+            <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}" />
+
+            <!-- Title Style -->
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="White" HeightRequest="100">
+            <Label Text="Menu"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <ShellContent Route="login"
+                  ContentTemplate="{DataTemplate local:LoginPage}"
+                  FlyoutItemIsVisible="False" />
+    <ShellContent Route="main"
+                  ContentTemplate="{DataTemplate local:MainPage}"
+                  FlyoutItemIsVisible="True" />
+    <MenuItem Text="View Cart"
+              Command="{Binding ViewCartCommand}"/>
+    <MenuItem Text="Logout"
+              Command="{Binding LogoutCommand}"/>
+
+</Shell>

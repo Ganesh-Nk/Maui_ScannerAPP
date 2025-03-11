@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui_Shopping_APP.Views.AddItemPage"
+             Title="Add your Items"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="*,Auto" Padding="20">
+        <Image Grid.Row="0"
+               Source="scanhome.png"
+               HeightRequest="200"
+               WidthRequest="200"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Aspect="AspectFit"/>
+        <VerticalStackLayout Grid.Row="1" Spacing="20">
+            <CollectionView x:Name="ItemsListView"
+                          ItemsSource="{Binding Items}"
+                          SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#F6EFFA"
+                               CornerRadius="20"
+                               Padding="10"
+                               HasShadow="False"
+                               Margin="0,5,0,5">
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding ItemName}"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       VerticalOptions="Center"/>
+                                <Label Text="x{Binding Quantity}"
+                                       FontSize="16"
+                                       TextColor="Black"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End"/>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="ADD ITEMS" 
+                       Grid.Column="0"
+                       FontSize="14" 
+                       TextColor="Black" 
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddItemsCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <Grid Grid.Column="1">
+                    <Image Source="addcart.png" HeightRequest="40" WidthRequest="40">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ViewCartCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label Text="{Binding CartItemCount}"
+                           BackgroundColor="Red"
+                           TextColor="White"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           IsVisible="{Binding IsCartBadgeVisible}"
+                           Padding="4"
+                           HeightRequest="24"
+                           WidthRequest="24"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           TranslationX="-10"
+                           TranslationY="-5"/>
+                </Grid>
+            </Grid>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
