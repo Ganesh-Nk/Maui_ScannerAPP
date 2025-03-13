@@ -11,9 +11,13 @@
         "dependencies": {
           "CommunityToolkit.Maui": "8.0.1",
           "CommunityToolkit.Mvvm": "8.4.0",
+          "FFImageLoading.Maui": "1.2.7",
           "Microsoft.Extensions.Logging.Debug": "8.0.1",
           "Microsoft.Maui.Controls": "8.0.100",
           "Microsoft.Maui.Controls.Compatibility": "8.0.100",
+          "SkiaSharp": "3.116.1",
+          "SkiaSharp.Extended": "2.0.0",
+          "SkiaSharp.Views.Maui.Controls": "3.116.1",
           "ZXing.Net.Maui": "0.4.0",
           "ZXing.Net.Maui.Controls": "0.4.0",
           "Microsoft.Maui.Controls.HotReload.Forms": "17.0.0.0",
@@ -68,6 +72,45 @@
           "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
             "assemblyVersion": "8.4.0.0",
             "fileVersion": "8.4.0.1"
+          }
+        }
+      },
+      "ExCSS/4.2.3": {
+        "runtime": {
+          "lib/net7.0/ExCSS.dll": {
+            "assemblyVersion": "4.2.3.0",
+            "fileVersion": "4.2.3.0"
+          }
+        }
+      },
+      "FFImageLoading.Maui/1.2.7": {
+        "dependencies": {
+          "Svg.Skia": "1.0.0.10"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/FFImageLoading.Maui.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp/7.3.0": {
+        "dependencies": {
+          "HarfBuzzSharp.NativeAssets.Win32": "7.3.0",
+          "HarfBuzzSharp.NativeAssets.macOS": "7.3.0"
+        },
+        "runtime": {
+          "lib/net6.0/HarfBuzzSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "7.3.0.0"
+          }
+        }
+      },
+      "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {},
+      "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+        "native": {
+          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -486,6 +529,161 @@
           }
         }
       },
+      "ShimSkiaSharp/1.0.0.10": {
+        "runtime": {
+          "lib/net8.0/ShimSkiaSharp.dll": {
+            "assemblyVersion": "1.0.0.10",
+            "fileVersion": "1.0.0.10"
+          }
+        }
+      },
+      "SkiaSharp/3.116.1": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "3.116.1"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/SkiaSharp.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
+          }
+        }
+      },
+      "SkiaSharp.Extended/2.0.0": {
+        "dependencies": {
+          "SkiaSharp": "3.116.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SkiaSharp.Extended.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.HarfBuzz/2.88.6": {
+        "dependencies": {
+          "HarfBuzzSharp": "7.3.0",
+          "SkiaSharp": "3.116.1"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.HarfBuzz.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.6.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Win32/3.116.1": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.WinUI/3.116.1": {
+        "runtime": {
+          "runtimes/win-x64/lib/net8.0-windows10.0.19041.0/SkiaSharp.Views.WinUI.Native.Projection.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
+          }
+        },
+        "native": {
+          "runtimes/win-x64/native/SkiaSharp.Views.WinUI.Native.dll": {
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/SkiaSharp.Views.WinUI.Native.winmd": {
+            "assemblyVersion": "255.255.255.255",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/libEGL.dll": {
+            "fileVersion": "2.1.1.0"
+          },
+          "runtimes/win-x64/native/libGLESv2.dll": {
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
+      "SkiaSharp.Views/3.116.1": {
+        "dependencies": {
+          "SkiaSharp": "3.116.1"
+        }
+      },
+      "SkiaSharp.Views.Maui.Controls/3.116.1": {
+        "dependencies": {
+          "Microsoft.Maui.Controls": "8.0.100",
+          "Microsoft.Maui.Core": "8.0.100",
+          "SkiaSharp": "3.116.1",
+          "SkiaSharp.Views.Maui.Core": "3.116.1"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Maui.Controls.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.Maui.Core/3.116.1": {
+        "dependencies": {
+          "Microsoft.Maui.Core": "8.0.100",
+          "SkiaSharp": "3.116.1",
+          "SkiaSharp.Views": "3.116.1",
+          "SkiaSharp.Views.WinUI": "3.116.1"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Maui.Core.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
+          }
+        }
+      },
+      "SkiaSharp.Views.WinUI/3.116.1": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.5.240802000",
+          "SkiaSharp": "3.116.1",
+          "SkiaSharp.NativeAssets.WinUI": "3.116.1"
+        },
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Windows.dll": {
+            "assemblyVersion": "3.116.0.0",
+            "fileVersion": "3.116.1.0"
+          }
+        }
+      },
+      "Svg.Custom/1.0.0.10": {
+        "dependencies": {
+          "ExCSS": "4.2.3"
+        },
+        "runtime": {
+          "lib/net8.0/Svg.Custom.dll": {
+            "assemblyVersion": "1.0.0.10",
+            "fileVersion": "1.0.0.10"
+          }
+        }
+      },
+      "Svg.Model/1.0.0.10": {
+        "dependencies": {
+          "ShimSkiaSharp": "1.0.0.10",
+          "Svg.Custom": "1.0.0.10"
+        },
+        "runtime": {
+          "lib/net8.0/Svg.Model.dll": {
+            "assemblyVersion": "1.0.0.10",
+            "fileVersion": "1.0.0.10"
+          }
+        }
+      },
+      "Svg.Skia/1.0.0.10": {
+        "dependencies": {
+          "SkiaSharp": "3.116.1",
+          "SkiaSharp.HarfBuzz": "2.88.6",
+          "Svg.Custom": "1.0.0.10",
+          "Svg.Model": "1.0.0.10"
+        },
+        "runtime": {
+          "lib/net8.0/Svg.Skia.dll": {
+            "assemblyVersion": "1.0.0.10",
+            "fileVersion": "1.0.0.10"
+          }
+        }
+      },
       "System.Speech/8.0.0": {
         "runtime": {
           "runtimes/win/lib/net8.0/System.Speech.dll": {
@@ -582,6 +780,41 @@
       "sha512": "sha512-tqVU8yc/ADO9oiTRyTnwhFN68hCwvkliMierptWOudIAvWY1mWCh5VFh+guwHJmpMwfg0J0rY+yyd5Oy7ty9Uw==",
       "path": "communitytoolkit.mvvm/8.4.0",
       "hashPath": "communitytoolkit.mvvm.8.4.0.nupkg.sha512"
+    },
+    "ExCSS/4.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SyeAfu2wL5247sipJoPUzQfjiwQtfSd8hN4IbgoyVcDx4PP6Dud4znwPRibWQzLtTlUxYYcbf5f4p+EfFC7KtQ==",
+      "path": "excss/4.2.3",
+      "hashPath": "excss.4.2.3.nupkg.sha512"
+    },
+    "FFImageLoading.Maui/1.2.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s2x2sAWOwVWIiIW89b4h59vK32G8wsoFOcfdc4ShEoN7gwyTTLYSwbNIWOczfhr0Yco0+NVnGy98vpkLUm3bAw==",
+      "path": "ffimageloading.maui/1.2.7",
+      "hashPath": "ffimageloading.maui.1.2.7.nupkg.sha512"
+    },
+    "HarfBuzzSharp/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OrQLaxtZMIeS2yHSUtsKzeSdk9CPaCpyJ/JCs+wLfRGatjE8MLUS6LGj6vdbGRxqRavcXs79C9O3oWe6FJR0JQ==",
+      "path": "harfbuzzsharp/7.3.0",
+      "hashPath": "harfbuzzsharp.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.macOS/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LWcFJ39j+dN0KK8c/GJJZPPZPL9TqT2FA42/LRGqzUMmSm5LYbINOMnPvUr7RuLR6RFSmKIrgrlgObR8G5ho2A==",
+      "path": "harfbuzzsharp.nativeassets.macos/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.macos.7.3.0.nupkg.sha512"
+    },
+    "HarfBuzzSharp.NativeAssets.Win32/7.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ulEewLMk+dNmbmpy15ny/YusI6JNUWqchF080TV2jgfFBXPXjWm767JleDi/S7hp8eDeEN6GYIIxpvNr5fLvIw==",
+      "path": "harfbuzzsharp.nativeassets.win32/7.3.0",
+      "hashPath": "harfbuzzsharp.nativeassets.win32.7.3.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/8.0.0": {
       "type": "package",
@@ -743,6 +976,97 @@
       "sha512": "sha512-XW6cNzbGKDuzn+iCY1L9pNDm3pF78te8PXjKWEYk+rgePVPV/j2otr75Q5NMbWzsMF461Qq7aPJZKUQAQJNISQ==",
       "path": "microsoft.windowsappsdk/1.5.240802000",
       "hashPath": "microsoft.windowsappsdk.1.5.240802000.nupkg.sha512"
+    },
+    "ShimSkiaSharp/1.0.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2WpgWZeukprXyzD9mzGhkOtxW37ne3zd4+YgmZtYVO4UNPAmFQU2KdNBsV0Pk3whcksjVzoWXFrvTfC/FIu0yg==",
+      "path": "shimskiasharp/1.0.0.10",
+      "hashPath": "shimskiasharp.1.0.0.10.nupkg.sha512"
+    },
+    "SkiaSharp/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DNDwbRjP+aMo27dV2h/uHCVTcWubWWxHnPLiePNyl24f4Pv43mQ8AQQeseOrKR+J3AOCEs6t0sUjo0aa3j3RWQ==",
+      "path": "skiasharp/3.116.1",
+      "hashPath": "skiasharp.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.Extended/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3q6JhbxiPcp45gXwS+DbGmpe6JyjaqckFS5KhbmpDDhwJ1gy967TrDWjBzqn0b1nPICttHXZ+3txx0vMX649cw==",
+      "path": "skiasharp.extended/2.0.0",
+      "hashPath": "skiasharp.extended.2.0.0.nupkg.sha512"
+    },
+    "SkiaSharp.HarfBuzz/2.88.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s5yZTHdqbXKiTL06ns6zW3asELfX60dEceA4ZdYmNlOkz/OyWDfdjHAuu4HGDA7Mxx5iaUEzDZgPkEe+OVr/jg==",
+      "path": "skiasharp.harfbuzz/2.88.6",
+      "hashPath": "skiasharp.harfbuzz.2.88.6.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dRQ75MCI8oz6zAs2Y1w6pq6ARs4MhdNG+gf3doOxOxdnueDXffQLGQIxON54GDoxc0WjKOoHMKBR4DhaduwwQw==",
+      "path": "skiasharp.nativeassets.win32/3.116.1",
+      "hashPath": "skiasharp.nativeassets.win32.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.WinUI/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4C4f5zKkiLKdyg0Z8W8ggtNsucl5VxetyJBAlWcyj0LDSoa1StemXu81JtgaMJfNA1BB2kTiR1T14sIPnZAZqQ==",
+      "path": "skiasharp.nativeassets.winui/3.116.1",
+      "hashPath": "skiasharp.nativeassets.winui.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.Views/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-76ovDiQHiKudqpJDJYf8FshNx5M2FKXd8E2ELliJJn2CEqQfy7VLUef4oH9JSgpA+ZgkV9nNlNPOV63C0znY6g==",
+      "path": "skiasharp.views/3.116.1",
+      "hashPath": "skiasharp.views.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.Views.Maui.Controls/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cUEiU0+PY6PQXdvVGbTBCxZD9R85o25ZHULFZ+muXdEuDmXI/iDvXYgldfLD5R9S7wDArnDCMIoep3A8TcCDWw==",
+      "path": "skiasharp.views.maui.controls/3.116.1",
+      "hashPath": "skiasharp.views.maui.controls.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.Views.Maui.Core/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eNTI5VH2sNpnkOPKEefRWHXlN+v2bFD+yZ4jimNQeL05uart2PaULOd9piLrHmBn6QQZmScAvJ0w8prlQJCzpQ==",
+      "path": "skiasharp.views.maui.core/3.116.1",
+      "hashPath": "skiasharp.views.maui.core.3.116.1.nupkg.sha512"
+    },
+    "SkiaSharp.Views.WinUI/3.116.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KF4Hn0atdhFA2yXPk2Jzg0jZzDMYdhsbUpwLswAC2Vxai749GHFVdNkWsANxHl6fnJl7JaMm96WtGmFeg+FCFg==",
+      "path": "skiasharp.views.winui/3.116.1",
+      "hashPath": "skiasharp.views.winui.3.116.1.nupkg.sha512"
+    },
+    "Svg.Custom/1.0.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e3L/rozxoMVgcS0uov0/YZm5b1WAIYA2p20J3Yfc6hCV+e1X4CktwcGK+dV7F2Y7CtYldzYXm+f0b2shl1R4eA==",
+      "path": "svg.custom/1.0.0.10",
+      "hashPath": "svg.custom.1.0.0.10.nupkg.sha512"
+    },
+    "Svg.Model/1.0.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8J4uVAMNAoqqyvkoumA3N+P6oAEElsH2mh8ZHIVVAzh1+WdeDvDqLUp8n6yc+1AA2dCZJ+8An/HaylkcfUvPQg==",
+      "path": "svg.model/1.0.0.10",
+      "hashPath": "svg.model.1.0.0.10.nupkg.sha512"
+    },
+    "Svg.Skia/1.0.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gAhlxk46kl4IU488sWCOJX0/snCVWrq70KVMEnA9lnvUEQlwlcVMfWrWP4v+wlFGKh2O6/fXmfILcJGBr65h0g==",
+      "path": "svg.skia/1.0.0.10",
+      "hashPath": "svg.skia.1.0.0.10.nupkg.sha512"
     },
     "System.Speech/8.0.0": {
       "type": "package",

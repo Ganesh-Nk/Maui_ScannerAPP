@@ -5,21 +5,26 @@ using System;
 using ZXing.Net.Maui;
 using ZXing.Net.Maui.Controls;
 using Maui_Shopping_APP.Messages;
-
+using Maui_Shopping_APP.Helpers;
+using SkiaSharp;
+using SkiaSharp.Views.Maui;
+using FFImageLoading.Maui;
+using System.Timers;
 
 namespace Maui_Shopping_APP.Views
 {
     public partial class MainPage : ContentPage
     {
+       
         private readonly CartViewModel _cartViewModel;
+        private bool isScanning = false;
 
         public MainPage()
         {
             InitializeComponent();
-            _cartViewModel = new CartViewModel();
+            _cartViewModel = ServiceHelper.GetService<CartViewModel>();
             BindingContext = _cartViewModel;
 
-        
             WeakReferenceMessenger.Default.Register<CartBadgeMessage>(this, (r, m) =>
             {
                 MainThread.BeginInvokeOnMainThread(() =>
@@ -46,7 +51,6 @@ namespace Maui_Shopping_APP.Views
                 }
                 else
                 {
-         
                     throw new InvalidOperationException("Application.Current is null");
                 }
             }
@@ -58,28 +62,36 @@ namespace Maui_Shopping_APP.Views
         }
         private async void OnScanBarcodeClicked(object sender, EventArgs e)
         {
+            if (isScanning) return;
+            isScanning = true;
+
             try
             {
                 var scanner = new CameraBarcodeReaderView();
                 scanner.BarcodesDetected += async (s, args) =>
                 {
-                    if (args.Results.Length > 0)
+                    if (!isScanning || args.Results.Length == 0) return;
+                    
+                    isScanning = false;
+                    scanner.IsDetecting = false;
+
+                    MainThread.BeginInvokeOnMainThread(async () =>
                     {
-                        MainThread.BeginInvokeOnMainThread(async () =>
-                        {
-                            await Navigation.PopAsync();
-                            string barcode = args.Results[0].Value;
-                            await DisplayAlert("Success", $"Barcode scanned: {barcode}", "OK");
-                            _cartViewModel.AddItem(barcode);
-                            WeakReferenceMessenger.Default.Send(new CartBadgeMessage(_cartViewModel.CartItemCount));
-                        });
-                    }
+                        await Navigation.PopAsync();
+                        string barcode = args.Results[0].Value;
+                        await DisplayAlert("Success", $"Barcode scanned: {barcode}", "OK");
+                        _cartViewModel.AddItem(barcode);
+                        WeakReferenceMessenger.Default.Send(new CartBadgeMessage(_cartViewModel.CartItemCount));
+                    });
+
+                    scanner.Handler?.DisconnectHandler();
                 };
 
                 await Navigation.PushAsync(new ContentPage { Content = scanner });
             }
             catch (Exception ex)
             {
+                isScanning = false;
                 await DisplayAlert("Error", $"Failed to initialize scanner: {ex.Message}", "OK");
             }
         }

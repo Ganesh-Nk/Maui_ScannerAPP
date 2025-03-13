@@ -1,4 +1,5 @@
-﻿using Maui_Shopping_APP.ViewModels;
+﻿using Maui_Shopping_APP.Helpers;
+using Maui_Shopping_APP.ViewModels;
 using Maui_Shopping_APP.Views;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -14,8 +15,9 @@ namespace Maui_Shopping_APP
         public AppShell()
         {
             InitializeComponent();
-            _cartViewModel = new CartViewModel();
-
+            
+            _cartViewModel = ServiceHelper.GetService<CartViewModel>();
+            
             ViewCartCommand = new Command(ExecuteViewCart);
             LogoutCommand = new Command(ExecuteLogout);
 
@@ -27,7 +29,7 @@ namespace Maui_Shopping_APP
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 try
-                {
+                { 
                     await Navigation.PushAsync(new CartPage(_cartViewModel));
                     Current.FlyoutIsPresented = false;
                 }

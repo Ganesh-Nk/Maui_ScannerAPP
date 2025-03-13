@@ -4,8 +4,6 @@
        xmlns:local="clr-namespace:Maui_Shopping_APP.Views"
        x:Class="Maui_Shopping_APP.AppShell"
        FlyoutBehavior="Disabled">
-
-    <!-- Shell Styles -->
     <Shell.Resources>
         <ResourceDictionary>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -18,8 +16,6 @@
                 <Setter Property="Shell.TabBarUnselectedColor" Value="#95000000"/>
             </Style>
             <Style TargetType="ShellContent" BasedOn="{StaticResource BaseStyle}" />
-
-            <!-- Title Style -->
             <Style x:Key="TitleStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="Black"/>
                 <Setter Property="FontAttributes" Value="Bold"/>

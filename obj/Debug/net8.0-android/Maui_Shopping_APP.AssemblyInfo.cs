@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Maui_Shopping_APP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+19400d2adeccb752f0d45c1e5887bc7d414a89d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0e6dd37bde918e76d8d275a81c30a5ce8e63b23b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Maui_Shopping_APP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Maui_Shopping_APP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

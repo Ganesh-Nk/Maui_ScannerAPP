@@ -48,6 +48,7 @@ namespace Maui_Shopping_APP.Views
 
             async void BarcodeDetectedHandler(object s, BarcodeDetectionEventArgs args)
             {
+                await Navigation.PopModalAsync();
                 if (!isScanning || args.Results.Length == 0)
                     return;
 

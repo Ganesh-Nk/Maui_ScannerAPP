@@ -4,31 +4,48 @@
              x:Class="Maui_Shopping_APP.Views.CartPage"
              Title="Cart">
 
-    <CollectionView ItemsSource="{Binding Items}"
-                   EmptyView="No items in cart">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Frame Margin="10" Padding="10">
-                    <Grid ColumnDefinitions="*,Auto,Auto">
-                        <Label Text="{Binding Barcode}"
-                               VerticalOptions="Center"/>
-                        <Label Grid.Column="1"
-                               Text="{Binding Quantity, StringFormat='x{0}'}"
-                               VerticalOptions="Center"
-                               Margin="10,0"/>
-                        <Button Grid.Column="2"
-                                Text="Remove"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RemoveItemCommand}"
-                                CommandParameter="{Binding}"
-                                BackgroundColor="#dc3545"
-                                TextColor="White"
-                                HeightRequest="40"
-                                WidthRequest="80"
-                                Margin="5,0,0,0"/>
-                    </Grid>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <Grid RowDefinitions="Auto,*">
+        <Frame Grid.Row="0" 
+               Margin="10" 
+               Padding="15" 
+               BackgroundColor="#f8f9fa">
+            <StackLayout>
+                <Label Text="Total Items in Cart:"
+                       FontSize="16"
+                       TextColor="Black"/>
+                <Label Text="{Binding CartItemCount}"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#28A745"/>
+            </StackLayout>
+        </Frame>
+        <CollectionView Grid.Row="1"
+                       ItemsSource="{Binding Items}"
+                       EmptyView="No items in cart">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="10" Padding="10">
+                        <Grid ColumnDefinitions="*,Auto,Auto">
+                            <Label Text="{Binding Barcode}"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Column="1"
+                                   Text="{Binding Quantity, StringFormat='x{0}'}"
+                                   VerticalOptions="Center"
+                                   Margin="10,0"/>
+                            <Button Grid.Column="2"
+                                    Text="Remove"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.RemoveItemCommand}"
+                                    CommandParameter="{Binding}"
+                                    BackgroundColor="#dc3545"
+                                    TextColor="White"
+                                    HeightRequest="40"
+                                    WidthRequest="100"
+                                    Margin="5,0,0,0"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 
 </ContentPage>

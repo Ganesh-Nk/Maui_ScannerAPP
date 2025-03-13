@@ -1,4 +1,5 @@
 ﻿using Maui_Shopping_APP.ViewModels;
+using System.Threading.Tasks; 
 
 namespace Maui_Shopping_APP.Views
 {
@@ -8,6 +9,7 @@ namespace Maui_Shopping_APP.Views
         {
             InitializeComponent();
             BindingContext = new LoginViewModel();
+            
         }
     }
 }
